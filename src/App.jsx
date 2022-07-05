@@ -15,13 +15,16 @@ export function App() {
     })
   }
 
-
   return (
     <div className="App">
       <TodoCounter />
       <TodoSearch />
       <CreateItemButton newItem={newItem} />
-      <TodoList todos={ todos } />
+      {
+        todos.length === 0
+          ? <p>No hay Todos</p>
+          : <TodoList todos={ todos } text={'Hola'} />
+      }
       <CreateTodoButton />
     </div>
   );

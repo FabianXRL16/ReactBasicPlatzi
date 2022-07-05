@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default function TodoItem({data}) {
+// import li from './TodoItem.css'
+import './TodoItem.css'
+
+export default function TodoItem({data, text}) {
   return (
-    <li>{data.text}</li>
+    // <li style={li}>{text} - {data.text}</li>
+    <li>{text} - {data.text}</li>
   )
 }
