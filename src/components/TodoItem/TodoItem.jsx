@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function TodoItem() {
+export default function TodoItem({data}) {
   return (
-    <li>Hola</li>
+    <li>{data.text}</li>
   )
 }
