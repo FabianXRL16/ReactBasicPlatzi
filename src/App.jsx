@@ -1,13 +1,15 @@
-import TodoCounter from './components/TodoCounter/TodoCounter'
-import TodoSearch from './components/TodoSearch/TodoSearch'
-import TodoList from './components/TodoList/TodoList'
-import CreateTodoButton from './components/CreateTodoButton/CreateTodoButton'
-import CreateItemButton from './components/CreateItemButton/CreateItemButton'
-
 import React, { useState } from 'react'
+
+import { v4 as uuid } from 'uuid'
+
+import './App.css'
+
+import Data from './layout/Data/Data'
+import Settings from './layout/Settings/Settings'
 
 export function App() {
   const [todos, setTodos] = useState([])
+  const [categories, setCategories] = useState([{id: uuid(), text: 'Personal'},{id: uuid(), text: 'Work'}])
   
   const newItem = (task) => {
     setTodos((prevTodos) => {
@@ -15,17 +17,12 @@ export function App() {
     })
   }
 
+  const nameUser = 'Fabian'
+
   return (
     <div className="App">
-      <TodoCounter />
-      <TodoSearch />
-      <CreateItemButton newItem={newItem} />
-      {
-        todos.length === 0
-          ? <p>No hay Todos</p>
-          : <TodoList todos={ todos } text={'Hola'} />
-      }
-      <CreateTodoButton />
+      <Settings />
+      <Data newItem={newItem} todos={todos} categories={categories} nameUser={nameUser} />
     </div>
   );
 }
