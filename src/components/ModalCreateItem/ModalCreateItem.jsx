@@ -6,12 +6,17 @@ import { v4 as uuid } from 'uuid'
 
 export default function ModalCreateItem({ newItem, categories, closeModal }) {
   const todoTaskRef = useRef()
+  const msgRef = useRef()
 
   const handleTodoAdd = () => {
     const task = todoTaskRef.current.value
     if (task === '') return
     newItem({ text: task, id: uuid() })
     todoTaskRef.current.value = null
+    msgRef.current.style.transform = "scale(1)"
+    setTimeout(() => {
+      msgRef.current.style.transform = "scale(0)"
+    }, 1000);
   }
 
   return (
@@ -36,6 +41,7 @@ export default function ModalCreateItem({ newItem, categories, closeModal }) {
         </div>
         <button className='btnAdd' onClick={handleTodoAdd}>Add Item</button>
       </div>
+      <div ref={msgRef} className='MsgSuccessfully'>Task created successfully</div>
     </div>
   )
 }
