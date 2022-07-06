@@ -1,0 +1,10 @@
+.Title {
+    padding: 10px 0px;
+}
+
+.Title span {
+    color: var(--bg-primary);
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
