@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import './ModalCreateItem.css'
 
@@ -8,11 +8,20 @@ export default function ModalCreateItem({ newItem, categories, closeModal }) {
   const todoTaskRef = useRef()
   const msgRef = useRef()
 
+  const [currentCategory, setCurrentCategory] = useState(categories[0].text)
+
+  const changeCategory = e => {
+    setCurrentCategory(e.target.value)
+  }
+
   const handleTodoAdd = () => {
     const task = todoTaskRef.current.value
+
     if (task === '') return
-    newItem({ text: task, id: uuid() })
+
+    newItem({ text: task, id: uuid(), category: currentCategory })
     todoTaskRef.current.value = null
+
     msgRef.current.style.transform = "scale(1)"
     setTimeout(() => {
       msgRef.current.style.transform = "scale(0)"
@@ -31,8 +40,8 @@ export default function ModalCreateItem({ newItem, categories, closeModal }) {
           <div className='Categories'>
           {
             categories.map(i => (
-              <div className='Category' key={i.id}>
-                <input type="radio" name="categories" />
+              <div className='Category' key={i.id} >
+                <input id={i.text} type="radio" name="categories" value={i.text} checked={currentCategory === i.text ? true : false} onChange={changeCategory} />
                 <span>{i.text}</span>
               </div>
             ))
