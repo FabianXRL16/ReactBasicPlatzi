@@ -1,1 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
 
+:root {
+    --bg-primary: #0d1e53;
+    --bg-secondary: #f8f9fe;
+    --bg-tertiary: #0668fc;
+    --bg-fourth: #3a3e4a;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    display: grid;
+    place-content: center;
+    background-color: #d7def6;
+}
+
+button, input {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--bg-primary);
+    font-size: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .App {
+        border-radius: 20px;
+        width: 600px;
+        height: 580px;
+        min-height: 500px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
