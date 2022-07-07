@@ -1,3 +1,30 @@
 li {
-    color: blue;
+    color: var(--bg-fourth);
+    list-style: none;
+    height: 50px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 18px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    width: 99%;
+}
+
+li .btnItem {
+    border: 2px solid var(--bg-fifth);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li .btnItem ion-icon {
+    font-size: 14px;
+    color: var(--bg-fifth);
 }
