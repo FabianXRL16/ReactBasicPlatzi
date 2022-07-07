@@ -1,0 +1,29 @@
+.List {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.List span {
+    color: var(--bg-fourth);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.List ul {
+    margin: 0px;
+    padding: 0px;
+    gap: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.List ul::-webkit-scrollbar {
+    width: 2px;
+}
+
+.List ul::-webkit-scrollbar-thumb {
+    width: 2px;
+    border-radius: 2px;
+    background-color: #dee0e7;
+}
