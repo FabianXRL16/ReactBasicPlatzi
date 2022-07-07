@@ -1,11 +1,14 @@
 import React from 'react'
 
-// import li from './TodoItem.css'
 import './TodoItem.css'
 
-export default function TodoItem({data, text}) {
+export default function TodoItem({data}) {
   return (
-    // <li style={li}>{text} - {data.text}</li>
-    <li>{text} - {data.text}</li>
+    <li>
+      <button className='btnItem'>
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </button>
+      {data.text}
+    </li>
   )
 }
